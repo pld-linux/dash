@@ -10,7 +10,7 @@ URL:		http://gondor.apana.org.au/~herbert/dash/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_bindir			/bin
-%define		_shell			%{_bindir}/posh
+%define		_shell			%{_bindir}/%{name}
 
 %description
 DASH is a POSIX-compliant implementation of /bin/sh that aims to be as
