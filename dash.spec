@@ -7,6 +7,8 @@ Group:		Applications/Shells
 Source0:	http://gondor.apana.org.au/~herbert/dash/files/%{name}-%{version}.tar.gz
 # Source0-md5:	1a3cd6669459be4344ec55ec9d4914f8
 URL:		http://gondor.apana.org.au/~herbert/dash/
+Requires(post):	grep
+Requires(preun):	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_bindir			/bin
