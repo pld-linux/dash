@@ -1,4 +1,5 @@
 Summary:	POSIX-compliant implementation of /bin/sh
+Summary(pl):	Zgodna z POSIX implementacja /bin/sh
 Name:		dash
 Version:	0.5.3
 Release:	0.1
@@ -22,6 +23,15 @@ Bourne-Again SHell) for most tasks.
 
 DASH is a direct descendant of the NetBSD version of ash (the Almquist
 SHell)
+
+%description -l pl
+DASH to zgodna z POSIX implementacja /bin/sh, której celem jest jak
+najmniejszy rozmiar. Dokonano tego bez po¶wiêcania szybko¶ci je¶li to
+mo¿liwe. W rzeczywisto¶ci jest dash jest znacz±co szybszy od basha
+(GNU Bourne-Again SHell) przy wiêkszo¶ci zadañ.
+
+DASH to bezpo¶redni nastêpca wersji NetBSD asha (pow³oki Almquist
+SHell).
 
 %prep
 %setup -q
