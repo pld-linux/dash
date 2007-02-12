@@ -1,5 +1,5 @@
 Summary:	POSIX-compliant implementation of /bin/sh
-Summary(pl.UTF-8):   Zgodna z POSIX implementacja /bin/sh
+Summary(pl.UTF-8):	Zgodna z POSIX implementacja /bin/sh
 Name:		dash
 Version:	0.5.3
 Release:	0.1
