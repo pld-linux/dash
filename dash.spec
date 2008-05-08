@@ -2,12 +2,13 @@ Summary:	POSIX-compliant implementation of /bin/sh
 Summary(pl.UTF-8):	Zgodna z POSIX implementacja /bin/sh
 Name:		dash
 Version:	0.5.4
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Applications/Shells
 Source0:	http://gondor.apana.org.au/~herbert/dash/files/%{name}-%{version}.tar.gz
 # Source0-md5:	bc457e490a589d2f87f2333616b67931
 URL:		http://gondor.apana.org.au/~herbert/dash/
+Patch0:		%{name}-debian.patch
 Requires(post):	grep
 Requires(preun):	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -35,6 +36,7 @@ SHell).
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure
@@ -49,18 +51,8 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-if [ ! -f /etc/shells ]; then
-	umask 022
-	echo '%{_shell}' > /etc/shells
-else
-	grep -q '^%{_shell}$' /etc/shells || echo '%{_shell}' >> /etc/shells
-fi
-
-%preun
-if [ "$1" = "0" ]; then
-	%{__sed} -i -e '/^%(echo %{_shell} | sed -e 's,/,\\/,g')$/d' /etc/shells
-fi
+%post   -p %add_etc_shells -p /bin/dash
+%preun  -p %remove_etc_shells -p /bin/dash
 
 %files
 %defattr(644,root,root,755)
