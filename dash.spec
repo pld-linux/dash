@@ -7,8 +7,8 @@ License:	GPL v2+
 Group:		Applications/Shells
 Source0:	http://gondor.apana.org.au/~herbert/dash/files/%{name}-%{version}.tar.gz
 # Source0-md5:	bc457e490a589d2f87f2333616b67931
-URL:		http://gondor.apana.org.au/~herbert/dash/
 Patch0:		%{name}-debian.patch
+URL:		http://gondor.apana.org.au/~herbert/dash/
 Requires(post):	grep
 Requires(preun):	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
