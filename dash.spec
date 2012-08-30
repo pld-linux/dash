@@ -26,8 +26,8 @@ SHell)
 
 %description -l pl.UTF-8
 DASH to zgodna z POSIX implementacja /bin/sh, której celem jest jak
-najmniejszy rozmiar. Dokonano tego bez poświęcania szybkości jeśli to
-możliwe. W rzeczywistości jest dash jest znacząco szybszy od basha
+najmniejszy rozmiar. Dokonano tego bez poświęcania szybkości tam,
+gdzie to możliwe. W rzeczywistości dash jest znacząco szybszy od basha
 (GNU Bourne-Again SHell) przy większości zadań.
 
 DASH to bezpośredni następca wersji NetBSD asha (powłoki Almquist
@@ -49,8 +49,8 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post   -p %add_etc_shells -p /bin/dash
-%preun  -p %remove_etc_shells -p /bin/dash
+%post	-p %add_etc_shells -p /bin/dash
+%preun	-p %remove_etc_shells -p /bin/dash
 
 %files
 %defattr(644,root,root,755)
