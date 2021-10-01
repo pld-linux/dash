@@ -1,12 +1,12 @@
 Summary:	POSIX-compliant implementation of /bin/sh
 Summary(pl.UTF-8):	Zgodna z POSIX implementacja /bin/sh
 Name:		dash
-Version:	0.5.11.4
+Version:	0.5.11.5
 Release:	1
 License:	GPL v2+
 Group:		Applications/Shells
 Source0:	http://gondor.apana.org.au/~herbert/dash/files/%{name}-%{version}.tar.gz
-# Source0-md5:	39d6fb8ab465be82a2276060bc3759d3
+# Source0-md5:	09227e8c3922755d4cf787607035d2de
 URL:		http://gondor.apana.org.au/~herbert/dash/
 Requires(post):	grep
 Requires(preun):	sed >= 4.0
